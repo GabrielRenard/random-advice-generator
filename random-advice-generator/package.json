@@ -1,15 +1,19 @@
 {
+  "homepage": "https://gabrielrenard.github.io/random-advice-generator/",
   "name": "random-advice-generator",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "pre-deploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp build/index.html build/404.html",
     "preview": "vite preview"
   },
   "dependencies": {
     "axios": "^1.1.3",
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
